@@ -1,0 +1,48 @@
+body{font-family: 'Comic Neue', cursive;}
+body{
+    background-color: #1E88E5;
+}
+
+fieldset{
+    margin-left: 700px;
+}
+
+#so{
+padding: 15px;
+margin-left: 1500px;
+}
+.create,.delete,.update{
+    margin-bottom: 100px;
+}
+#createuser{
+    padding:10px;
+    margin-left: 5px;
+}
+
+#deleteuser{
+    padding:10px;
+    margin-left: 5px;
+}
+
+#updateuser{
+    padding:10px;
+    margin-left: 5px;
+}
+
+#Clear{
+    padding:10px;
+    margin-left: 20px; 
+}
+
+.facultycreate,.facultydelete,.facultyupdate{
+    margin-bottom: 100px;
+}
+
+#createfaculty,#deletefaculty,#updatefaculty{
+    padding:10px;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+}
