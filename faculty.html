@@ -9,19 +9,28 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
   <script src="fac.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
- 
+  <link rel="stylesheet" href="facs.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <script type="text/javascript">
-
-    // Load the Visualization API and the corechart package.
     google.charts.load('current', {'packages':['corechart']});
-
-    // Set a callback to run when the Google Visualization API is loaded.
 </script>
 <body>
-    <h1>Hii faculty</h1>
+  <body>
+    <div class="coantainer-fluid">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> 
+          <h2 class="text-primary" id="wmsg">Hii Faculty</h2> 
+          <ul class="nav navbar">
+              <li><button  onclick="signOut()" style=" margin-left: 1220px; padding: 12px;" type="button" class="btn btn-primary"><i class="fa fa-sign-out" style="font-size:25px;float: right;color:whitesmoke"></i>Sign Out&emsp;</button></li>
+          </ul>
+          </nav> 
+  </div>
     <div id="pie_chart"></div>
-<button onclick="drawchart()">Click here to generate report</button>
+<button class="btn btn-primary" id="dc" onclick="drawchart()">Generate Report</button>
 
 </body>
 </html>

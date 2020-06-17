@@ -12,12 +12,11 @@ var firebaseConfig = {
     
   var database = firebase.database();
   var dbRef = database.ref('faculty');  
-    
-  
   
     function login(){
       console.log("working");
       var uname=document.getElementById("uname").value;
+      localStorage.setItem("fname",uname);
       var pass=document.getElementById("pass").value;
       if(uname==""||pass==""){
         alert("These fields are manidatory");
@@ -27,7 +26,6 @@ var firebaseConfig = {
         snapshot.forEach(function(childsnapshot){
         var Roll=childsnapshot.child("mail").val();
        if(pass==Roll){
-         localStorage.setItem("un",Roll);
         window.location='faculty.html';
        }
        else{
@@ -40,6 +38,8 @@ var firebaseConfig = {
      window.onload=function(){
       window.avg();
      }
+
+
   var dbref1= database.ref('student');
   var count_1=0;
   var count_2=0; 
@@ -51,9 +51,16 @@ var firebaseConfig = {
   var rate_vpcn=0;
   
   function avg(){
+    var fname = localStorage.getItem("fname");
+    var pref=database.ref('faculty/'+fname);
+    var cref=pref.child('subject');
+    cref.once("value",function (snapshot) {
+      var csub=snapshot.val();
+      console.log(csub);
+
    dbref1.once('value',function(snapshot){
    snapshot.forEach(function(childsnapshot){
-   var vpcn=childsnapshot.child("VPCN").val();
+   var vpcn=childsnapshot.child(csub).val();
    count_vpcn++;
    rate_vpcn=rate_vpcn+vpcn;
    if(vpcn==5){
@@ -76,7 +83,7 @@ var firebaseConfig = {
   });
   avg_vpcn=((count_1)+(count_2*2)+(count_3*3)+(count_4*4)+(count_5*5))/(count_5+count_4+count_3+count_2+count_1);
   console.log(avg_vpcn);
-  
+});
   });
   }
   
@@ -92,17 +99,24 @@ var firebaseConfig = {
     var count_5=this.count_5;
     var data = google.visualization.arrayToDataTable([
         ['Task', 'feedback report'],
-        ['5 *', count_5],
-        ['4 *', count_4],
-        ['3 *', count_3],
-        ['2 *', count_2],
-        ['1*', count_1]
+        ['5 star', count_5],
+        ['4 star', count_4],
+        ['3 star', count_3],
+        ['2 star', count_2],
+        ['1 star', count_1]
       ]);
       
         // Optional; add a title and set the width and height of the chart
-        var options = {'title':'Feedback Report', 'width':550, 'height':400};
+        var options = {'title':'Feedback Report Generated', 'width':750, 'height':900};
       
         // Display the chart inside the <div> element with id="piechart"
         var chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
         chart.draw(data, options);
    }
+
+   function signOut(){
+     alert("You have been signed out");
+     window.location="index.html";
+   }
+
+  

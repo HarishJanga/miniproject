@@ -1,16 +1,15 @@
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyDCbF5R3za4kARU6_HB75d-xhzC7becbK0",
-  authDomain: "ams-cvr.firebaseapp.com",
-  databaseURL: "https://ams-cvr.firebaseio.com",
-  projectId: "ams-cvr",
-  storageBucket: "ams-cvr.appspot.com",
-  messagingSenderId: "363078483627",
-  appId: "1:363078483627:web:ad2c84ea11b0164ea6c1ee",
-  measurementId: "G-W95EYHQ5ZB"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+   // Your web app's Firebase configuration
+   var firebaseConfig = {
+    apiKey: "AIzaSyAS0OQtH-KB8b4X4OcdIeogRXmfOelWx4o",
+    authDomain: "form-a5ec9.firebaseapp.com",
+    databaseURL: "https://form-a5ec9.firebaseio.com",
+    projectId: "form-a5ec9",
+    storageBucket: "form-a5ec9.appspot.com",
+    messagingSenderId: "138028896373",
+    appId: "1:138028896373:web:dfac61ae6717b4d514a83c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
     
   var database = firebase.database();
   var dbRef = database.ref('student');  
