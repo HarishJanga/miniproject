@@ -25,6 +25,32 @@
   </head>
   <style>
 
+.alert {
+  padding: 10px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+
+
+
     .inputWithIcon {
   position: relative;
 }
@@ -55,7 +81,13 @@
             </ul>
         </nav> 
     </div>
-<div style="padding-bottom: 300px;" class="wrapper fadeInDown">
+    
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      You location has been captured in the background!
+    </div>
+
+<div style="padding-bottom: 100px;" class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
     <div id="formFooter">
@@ -65,16 +97,15 @@
     <div class="fadeIn first">
       <img src="https://www.w3schools.com/bootstrap4/img_avatar1.png" style="width: 300px;" id="icon" alt="User Icon" />
     </div>
-<br>
+ <br>
     <!-- Login Form -->
     <div class="inputWithIcon">
       <input autocomplete="off" autofocus="on" type="text" id="Rollnumber" placeholder="Roll Number">
       <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="color: rgb(80, 98, 255);"></i>
   </div>
   <br>
-      <button style="padding: 10px;" type="button" class="btn btn-primary" onclick="signIn2()" id="singnIn"><i class="fa fa-sign-out" style="font-size:25px;float: left;color:whitesmoke"></i>&emsp;Sign In</button><br>
+      <button style="padding: 10px;" type="button" class="btn btn-primary" onclick="login()" id="singnIn"><i class="fa fa-sign-out" style="font-size:25px;float: left;color:whitesmoke"></i>&emsp;Sign In</button>
     <!-- Remind Passowrd -->
-  <br>
     <div id="formFooter">
       <p class="text-primary" id="msg">Note:- students can't access outside college premises</p>
     </div>

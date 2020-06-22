@@ -1,22 +1,40 @@
    // Your web app's Firebase configuration
    var firebaseConfig = {
-    apiKey: "AIzaSyAS0OQtH-KB8b4X4OcdIeogRXmfOelWx4o",
-    authDomain: "form-a5ec9.firebaseapp.com",
-    databaseURL: "https://form-a5ec9.firebaseio.com",
-    projectId: "form-a5ec9",
-    storageBucket: "form-a5ec9.appspot.com",
-    messagingSenderId: "138028896373",
-    appId: "1:138028896373:web:dfac61ae6717b4d514a83c"
+    apiKey: "AIzaSyAvF5O1Im5MFODVa2Vjz8STC5FIpA_jiGk",
+    authDomain: "miniproject-cseb17.firebaseapp.com",
+    databaseURL: "https://miniproject-cseb17.firebaseio.com",
+    projectId: "miniproject-cseb17",
+    storageBucket: "miniproject-cseb17.appspot.com",
+    messagingSenderId: "575999793252",
+    appId: "1:575999793252:web:830f73e2f790ed2c56e771",
+    measurementId: "G-116T7JPMMB"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
     
   var database = firebase.database();
   var dbRef = database.ref('student');  
-    
   
-  
-    function signIn2(){
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position){
+        let latitude=position.coords.latitude;
+        let longitude=position.coords.longitude;
+        let lat,long;
+        lat=latitude.toFixed(1);
+        long=longitude.toFixed(1);
+        console.log(lat,long);
+        if(lat==17.5 && long==78.4){
+          console.log("you are at correct location");
+          $('.btn').prop('disabled', false);
+        }
+        else{
+          console.log("you are not at correct location");
+          $('.btn').prop('disabled', true);
+        }
+      });
+    }
+    function login(){
+      console.log("i am alive");
       var Rollnumber=document.getElementById("Rollnumber").value;
       if(Rollnumber==""){
         document.getElementById("msg").innerHTML="This field can't be empty!!";
